@@ -7,8 +7,6 @@ public class TestingSystem {
 
         String[] questions = {"What is a correct syntax to output \"Hello World\" in Java", "Which data type is used to create a variable that should store text?", "Which keyword is used to import a package from the Java API library?"};
         int[] rightAnswerIndexes = {1, 2, 4};
-
-
         String[][] answers = {{"1. System.out.println(\"Hello World\");", "2. echo(\"Hello World\");", "3. print (\"Hello World\");"},
                 {"1.string", "2.String", "3.text", "4.Text"},
                 {"1.package", "2.getlib", "3.setlib", "4.import", "5.lib"}};
@@ -19,9 +17,7 @@ public class TestingSystem {
             for (int j = 0; j < countOfAnswersInQuestion; j++) {
                 System.out.println(answers[i][j]);
             }
-
             Scanner sc = new Scanner(System.in);
-
             System.out.println("Enter number of correct answer:");
             int numberOfAnswer = 0;
             while (sc.hasNext()) {
@@ -38,7 +34,6 @@ public class TestingSystem {
                 System.out.println("Enter number of correct answer:");
                 sc.next();
             }
-
             if (numberOfAnswer == rightAnswerIndexes[i]) {
                 correctAnswersCount++;
                 System.out.println("You are right!\n");
