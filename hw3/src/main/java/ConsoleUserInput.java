@@ -22,7 +22,6 @@ public class ConsoleUserInput implements UserInput {
     public int readInt(int minValue, int maxValue) {
         int enteredNumberOfAnswer = 0;
         boolean shouldNextAnswerBeAsked = false;
-
         do {
             shouldNextAnswerBeAsked = true;
             userOutput.print("Enter number of correct answer:");
@@ -31,9 +30,7 @@ public class ConsoleUserInput implements UserInput {
                 userOutput.print("It is not a number!");
             }
             enteredNumberOfAnswer = readInt();
-
             if (enteredNumberOfAnswer > minValue && enteredNumberOfAnswer <= maxValue) {
-
                 shouldNextAnswerBeAsked = false;
             } else {
                 userOutput.print("Enter a number greater than 0 and less than or equal " + maxValue);

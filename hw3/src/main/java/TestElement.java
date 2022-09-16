@@ -18,7 +18,7 @@ public class TestElement {
         }
     }
 
-    public boolean ask() {
+    public boolean askAndCheckAnswerCorrectOrWrong() {
         show();
         int userAnswer = userInput.readInt(0, answers.length);
         return checkAnswerCorrectOrWrong(userAnswer);

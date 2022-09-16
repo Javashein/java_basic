@@ -11,7 +11,7 @@ public class Test {
 
     public void pass() {
         for (TestElement testElement : testElements) {
-            if (testElement.ask()) {
+            if (testElement.askAndCheckAnswerCorrectOrWrong()) {
                 rightAnswersCount++;
             } else {
                 wrongAnswersCount++;
