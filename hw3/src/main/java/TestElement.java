@@ -1,8 +1,9 @@
 public class TestElement {
-    private String question;
-    private String[] answers;
-    private int rightAnswerIndex;
-    private UserOutput userOutput = new ConsoleUserOutput();
+    private final String question;
+    private final String[] answers;
+    private final int rightAnswerIndex;
+    private final UserOutput userOutput = new ConsoleUserOutput();
+    private final UserInput userInput = new ConsoleUserInput();
 
     public TestElement(String question, String[] answers, int rightAnswerIndex) {
         this.question = question;
@@ -11,21 +12,25 @@ public class TestElement {
     }
 
     public void show() {
-        userOutput.print(getQuestion());
+        userOutput.print(question);
         for (String answerText : answers) {
             userOutput.print(answerText);
         }
     }
 
-    public String getQuestion() {
-        return question;
+    public boolean ask() {
+        show();
+        int userAnswer = userInput.readInt(0, answers.length);
+        return checkAnswerCorrectOrWrong(userAnswer);
     }
 
-    public String[] getAnswers() {
-        return answers;
-    }
-
-    public int getRightAnswerIndex() {
-        return rightAnswerIndex;
+    private boolean checkAnswerCorrectOrWrong(int numberOfAnswer) {
+        if (rightAnswerIndex == numberOfAnswer) {
+            userOutput.print("You are right!\n");
+            return true;
+        } else {
+            userOutput.print("You are wrong!\n");
+            return false;
+        }
     }
 }

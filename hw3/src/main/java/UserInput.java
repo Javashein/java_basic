@@ -3,4 +3,5 @@ public interface UserInput {
     int readInt();
     boolean isReadString();
     boolean isReadInt();
+    int readInt(int minValue, int maxValue);
 }
