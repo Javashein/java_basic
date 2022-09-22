@@ -18,19 +18,6 @@ public class Bank {
         return newClient;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bank bank = (Bank) o;
-        return Objects.equals(clients, bank.clients) && Objects.equals(clientAccounts, bank.clientAccounts);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(clients, clientAccounts);
-    }
-
     public Account openAccount(Client client, int countGoldCoints) {
         if (client.getAge() >= 18) {
             Account newAccount = new Account(countGoldCoints);
