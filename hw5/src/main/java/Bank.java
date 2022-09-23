@@ -3,6 +3,8 @@ import java.util.*;
 public class Bank {
     private List<Client> clients = new ArrayList<>();
     private Map<Account, Client> clientAccounts = new HashMap();
+    private Map<Client, Client> clientToAccountIndex = new HashMap();
+
 
     private void setClient(Client client) {
         clients.add(client);
@@ -23,6 +25,7 @@ public class Bank {
             Account newAccount = new Account(countGoldCoints);
             client.setAccount(newAccount);
             clientAccounts.put(newAccount, client);
+            clientToAccountIndex.put(client, client);
             System.out.println("Account is created!");
             return newAccount;
         } else {
@@ -32,7 +35,11 @@ public class Bank {
     }
 
     public List<Account> getAccounts(Client client) {
-        return client.getAccount();
+        if (clientToAccountIndex.containsKey(client)) {
+            return clientToAccountIndex.get(client).getAccount();
+        } else
+            System.out.println("No client with this account!");
+        return null;
     }
 
     public Client findClient(Account account) {

@@ -42,11 +42,11 @@ public class Client {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return age == client.age && Objects.equals(name, client.name) && Objects.equals(accounts, client.accounts);
+        return age == client.age && Objects.equals(name, client.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, accounts);
+        return Objects.hash(name, age);
     }
 }
