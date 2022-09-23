@@ -36,12 +36,10 @@ public class Bank {
     }
 
     public Client findClient(Account account) {
-        for (Map.Entry<Account, Client> accountClientEntry : clientAccounts.entrySet()) {
-            if (accountClientEntry.getKey().equals(account)) {
-                return accountClientEntry.getValue();
-            }
-        }
-        System.out.println("No client with this account!");
+        if (clientAccounts.containsKey(account)) {
+            return clientAccounts.get(account);
+        } else
+            System.out.println("No client with this account!");
         return null;
     }
 }
