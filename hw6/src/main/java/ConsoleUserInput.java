@@ -21,9 +21,8 @@ public class ConsoleUserInput implements UserInput {
     @Override
     public int readInt(int minValue, int maxValue) throws AnswerIndexOutOfBoundsException {
         int enteredNumberOfAnswer = 0;
-        boolean shouldNextAnswerBeAsked = false;
+        boolean shouldNextAnswerBeAsked;
         do {
-            shouldNextAnswerBeAsked = true;
             userOutput.print("Enter number of correct answer:");
             while (!isReadInt()) {
                 readString();

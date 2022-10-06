@@ -9,7 +9,7 @@ public class TestBlock {
         this.testElements = testElements;
     }
 
-    public void pass() {
+    public void pass() throws AnswerIndexOutOfBoundsException {
         for (TestElement testElement : testElements) {
             if (testElement.askAndCheckAnswerCorrectOrWrong()) {
                 rightAnswersCount++;

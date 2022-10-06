@@ -18,19 +18,15 @@ public class TestElement {
         }
     }
 
-    public boolean askAndCheckAnswerCorrectOrWrong() {
+    public boolean askAndCheckAnswerCorrectOrWrong() throws AnswerIndexOutOfBoundsException {
         show();
         int userAnswer = 0;
-        try {
+
             userAnswer = userInput.readInt(0, answers.length);
 
-        }
-       catch (AnswerIndexOutOfBoundsException exception)  {
-            exception.getMessage();
-       }
-        finally {
+
             return checkAnswerCorrectOrWrong(userAnswer);
-        }
+
     }
 
     private boolean checkAnswerCorrectOrWrong(int numberOfAnswer) {

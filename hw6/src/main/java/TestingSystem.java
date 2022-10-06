@@ -1,5 +1,5 @@
 public class TestingSystem {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AnswerIndexOutOfBoundsException {
         TestElement firstTestElement = new TestElement("What is a correct syntax to output \"Hello World\" in Java",
                 new String[]{"1. System.out.println(\"Hello World\");", "2. echo(\"Hello World\");", "3. print (\"Hello World\");"},
                 1);
