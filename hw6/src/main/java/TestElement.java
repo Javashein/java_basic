@@ -2,13 +2,14 @@ public class TestElement {
     private final String question;
     private final String[] answers;
     private final int rightAnswerIndex;
-    private final UserOutput userOutput = new ConsoleUserOutput();
+    private UserOutput userOutput;
     private final UserInput userInput = new ConsoleUserInput();
 
-    public TestElement(String question, String[] answers, int rightAnswerIndex) {
+    public TestElement(String question, String[] answers, int rightAnswerIndex, UserOutput userOutput) {
         this.question = question;
         this.answers = answers;
         this.rightAnswerIndex = rightAnswerIndex;
+        this.userOutput = userOutput;
     }
 
     public void show() {
@@ -21,12 +22,8 @@ public class TestElement {
     public boolean askAndCheckAnswerCorrectOrWrong() throws AnswerIndexOutOfBoundsException {
         show();
         int userAnswer = 0;
-
-            userAnswer = userInput.readInt(0, answers.length);
-
-
-            return checkAnswerCorrectOrWrong(userAnswer);
-
+        userAnswer = userInput.readInt(0, answers.length);
+        return checkAnswerCorrectOrWrong(userAnswer);
     }
 
     private boolean checkAnswerCorrectOrWrong(int numberOfAnswer) {
