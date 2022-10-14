@@ -19,9 +19,9 @@ public class ConsoleUserInput implements UserInput {
     }
 
     @Override
-    public int readInt(int minValue, int maxValue) throws AnswerIndexOutOfBoundsException {
+    public int readInt(int minValue, int maxValue) {
         int enteredNumberOfAnswer = 0;
-        boolean shouldNextAnswerBeAsked;
+        boolean shouldNextAnswerBeAsked = true;
         do {
             userOutput.print("Enter number of correct answer:");
             while (!isReadInt()) {
@@ -32,7 +32,12 @@ public class ConsoleUserInput implements UserInput {
             if (enteredNumberOfAnswer > minValue && enteredNumberOfAnswer <= maxValue) {
                 shouldNextAnswerBeAsked = false;
             } else {
-               throw new AnswerIndexOutOfBoundsException("Enter a number greater than 0 and less than or equal " + maxValue);
+                try {
+                    throw new AnswerIndexOutOfBoundsException("Enter a number greater than 0 and less than or equal " + maxValue);
+                }
+               catch (AnswerIndexOutOfBoundsException exception) {
+                    userOutput.print(exception.getMessage());
+               }
             }
         } while (shouldNextAnswerBeAsked);
         return enteredNumberOfAnswer;
