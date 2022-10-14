@@ -17,30 +17,30 @@ CREATE TABLE test_blocks
     is_answer_correct       BOOLEAN    		NOT NULL
 );
 
-INSERT INTO questions(name)
+INSERT INTO questions
 VALUES
     (1, 'What is a correct syntax to output "Hello World" in Java');
 	
-INSERT INTO questions(name)
+INSERT INTO questions
 VALUES
     (2, 'Which data type is used to create a variable that should store text?');
 	
-INSERT INTO answers(name)
+INSERT INTO answers
 VALUES
     (1, 'System.out.println("Hello World")');
-INSERT INTO answers(name)
+INSERT INTO answers
 VALUES
     (2, 'print("Hello World")');
-INSERT INTO answers(name)
+INSERT INTO answers
 VALUES
     (3, 'string');
-INSERT INTO answers(name)
+INSERT INTO answers
 VALUES
     (4, 'String');
-INSERT INTO answers(name)
+INSERT INTO answers
 VALUES
     (5, 'text');
-INSERT INTO answers(name)
+INSERT INTO answers
 VALUES
     (6, 'Text');
 
