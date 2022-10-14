@@ -20,7 +20,7 @@ public class ConsoleUserInput implements UserInput {
 
     @Override
     public int readInt(int minValue, int maxValue) {
-        int enteredNumberOfAnswer = 0;
+        int enteredNumberOfAnswer;
         boolean shouldNextAnswerBeAsked = true;
         do {
             userOutput.print("Enter number of correct answer:");
