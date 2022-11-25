@@ -7,8 +7,8 @@ public class RubleDeclension implements ICurrencyDeclension {
     @Override
     public String getCurrencyDeclension(int countCurrency) {
         IntegerNumberDigit numberDigitsGroupedByDigitClass = new IntegerNumberDigit(countCurrency);
-        NumberDigitsGroupedByDigitClass numberDigitInDigitClass = numberDigitsGroupedByDigitClass.getDigitGroupByDigitClass(NumberDigitsGroupedByDigitClass.DigitClassName.UNIT);
-        if (numberDigitInDigitClass.getDigitsSize() > 1 && numberDigitInDigitClass.isTenFromElevenToNineteen()) {
+        NumberDigitsGroupedByDigitClass numberDigitInDigitClass = numberDigitsGroupedByDigitClass.getDigitGroupByDigitClass(numberDigitsGroupedByDigitClass.getNumberDigitsGroupedByDigitClass(), NumberDigitsGroupedByDigitClass.DigitClassName.UNIT);
+        if (numberDigitInDigitClass.isTenFromElevenToNineteen()) {
             return "рублей";
         }
         String declension = switch (numberDigitInDigitClass.getUnitDigits()) {

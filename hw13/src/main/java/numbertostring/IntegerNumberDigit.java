@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IntegerNumberDigit {
-    List<NumberDigitsGroupedByDigitClass> numberDigitsGroupedByDigitClass = new ArrayList<>();
+    private int number;
+
 
     public IntegerNumberDigit(int number) {
+       this.number = number;
+    }
+
+    public List<NumberDigitsGroupedByDigitClass> getNumberDigitsGroupedByDigitClass() {
         int numberDigit = number;
+        List<NumberDigitsGroupedByDigitClass> numberDigitsGroupedByDigitClass = new ArrayList<>();
         NumberDigitsGroupedByDigitClass.DigitClassName digitClassName;
         int index = 0;
         List<Integer> nums = new ArrayList<>();
@@ -37,13 +43,10 @@ public class IntegerNumberDigit {
             index = 0;
             i--;
         }
-    }
-
-    public List<NumberDigitsGroupedByDigitClass> getNumberDigitsGroupedByDigitClass() {
         return numberDigitsGroupedByDigitClass;
     }
 
-    public NumberDigitsGroupedByDigitClass getDigitGroupByDigitClass(NumberDigitsGroupedByDigitClass.DigitClassName digitClass) {
+    public NumberDigitsGroupedByDigitClass getDigitGroupByDigitClass(List<NumberDigitsGroupedByDigitClass> numberDigitsGroupedByDigitClass, NumberDigitsGroupedByDigitClass.DigitClassName digitClass) {
         for (NumberDigitsGroupedByDigitClass numberDigit : numberDigitsGroupedByDigitClass) {
             if (numberDigit.getDigitClassName() == digitClass) {
                 return numberDigit;

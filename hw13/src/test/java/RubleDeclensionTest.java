@@ -23,4 +23,11 @@ public class RubleDeclensionTest {
         String declensionToString = rubleDeclension.getCurrencyDeclension(5);
         Assertions.assertEquals("рублей", declensionToString);
     }
+
+    @Test
+    public void testDeclensionWithFromElevenToNineteenRubles() {
+        RubleDeclension rubleDeclension = new RubleDeclension();
+        String declensionToString = rubleDeclension.getCurrencyDeclension(11);
+        Assertions.assertEquals("рублей", declensionToString);
+    }
 }
